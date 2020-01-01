@@ -24,6 +24,8 @@ class InputPollingSample : ApplicationAdapter() {
     lateinit var batch: SpriteBatch
     lateinit var font: BitmapFont
 
+    var test = "test"
+
     override fun create() {
         Gdx.app.logLevel = Application.LOG_DEBUG
 
@@ -76,7 +78,7 @@ class InputPollingSample : ApplicationAdapter() {
         // keys
         val wPressed = Gdx.input.isKeyJustPressed(Input.Keys.W)
         val sPressed = Gdx.input.isKeyPressed(Input.Keys.S)
-        
+
         font.draw(batch,
                 if (wPressed) "W is pressed" else "W is not pressed",
                 20f,
