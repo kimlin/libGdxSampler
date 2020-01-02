@@ -3,7 +3,6 @@ package com.learnprogrammingacademy.sampler
 import com.badlogic.gdx.Application
 import com.badlogic.gdx.ApplicationListener
 import com.badlogic.gdx.Gdx
-import com.badlogic.gdx.utils.Logger
 import com.learnprogrammingacademy.sampler.utils.logger
 
 class ApplicationListenerSample : ApplicationListener {
