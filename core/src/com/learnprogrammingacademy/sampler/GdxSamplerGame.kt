@@ -17,10 +17,14 @@ class GdxSamplerGame : ApplicationAdapter() {
     }
 
     override fun render() {
-        Gdx.gl.glClearColor(1.0f,0.0f,0.0f,1.0f)
+        // clear screen
+        // DRY - Don't repeat yourself
+        // WET - Waste everyone's time
+        Gdx.gl.glClearColor(1.0f, 0.0f, 0.0f, 1.0f)
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
+
         batch.begin()
-        batch.draw(img,0.0f,0.0f)
+        batch.draw(img, 0.0f, 0.0f)
         batch.end()
     }
 
