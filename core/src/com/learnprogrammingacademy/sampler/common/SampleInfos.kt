@@ -11,7 +11,8 @@ object SampleInfos {
             SampleInfo(InputPollingSample::class.java),
             SampleInfo(ModuleInfoSample::class.java),
             SampleInfo(MultiplexerSample::class.java),
-            SampleInfo(ReflectionSample::class.java)
+            SampleInfo(ReflectionSample::class.java),
+            SampleInfo(OrthographicCameraSample::class.java)
     )
 
     // val map : Map<String, Class<out SampleInfo>>
