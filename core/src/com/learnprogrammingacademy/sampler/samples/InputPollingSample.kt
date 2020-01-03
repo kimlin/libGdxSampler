@@ -1,30 +1,29 @@
-package com.learnprogrammingacademy.sampler
+package com.learnprogrammingacademy.sampler.samples
 
 import com.badlogic.gdx.Application
-import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
-import com.badlogic.gdx.utils.reflect.ClassReflection
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.Viewport
+import com.learnprogrammingacademy.sampler.common.SampleBase
 import com.learnprogrammingacademy.sampler.utils.clearScreen
 import com.learnprogrammingacademy.sampler.utils.logger
 import com.learnprogrammingacademy.sampler.utils.toInternalFile
 
-class ReflectionSample : ApplicationAdapter() {
+class InputPollingSample : SampleBase() {
 
     companion object {
         @JvmStatic
-        private val logger = logger<ReflectionSample>()
+        private val logger = logger<InputPollingSample>()
     }
 
-    private lateinit var camera: OrthographicCamera
-    private lateinit var viewport: Viewport
-    private lateinit var batch: SpriteBatch
-    private lateinit var font: BitmapFont
+    lateinit var camera: OrthographicCamera
+    lateinit var viewport: Viewport
+    lateinit var batch: SpriteBatch
+    lateinit var font: BitmapFont
 
     override fun create() {
         Gdx.app.logLevel = Application.LOG_DEBUG
@@ -35,7 +34,6 @@ class ReflectionSample : ApplicationAdapter() {
         viewport = FitViewport(1080f, 720f, camera)
         batch = SpriteBatch()
         font = BitmapFont("fonts/oswald-32.fnt".toInternalFile())
-        debugReflection<ReflectionSample>()
     }
 
     override fun resize(width: Int, height: Int) {
@@ -95,23 +93,5 @@ class ReflectionSample : ApplicationAdapter() {
     override fun dispose() {
         batch.dispose()
         font.dispose()
-    }
-
-    private inline fun <reified T : Any> debugReflection() {
-        val fields = ClassReflection.getDeclaredFields(T::class.java)
-        val methods = ClassReflection.getDeclaredMethods(T::class.java)
-
-        logger.debug("reflecting class= ${T::class.java.simpleName}")
-        logger.debug("field count= ${fields.size}")
-
-        for (field in fields) {
-            logger.debug("name= ${field.name} type= ${field.type}")
-        }
-
-        logger.debug("method count= ${methods.size}")
-
-        methods.forEach {
-            logger.debug("name= ${it.name} parameterCount= ${it.parameterTypes.size}")
-        }
     }
 }

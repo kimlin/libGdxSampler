@@ -2,9 +2,7 @@ package com.learnprogrammingacademy.sampler.desktop
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration
-import com.learnprogrammingacademy.sampler.InputListeningSample
-import com.learnprogrammingacademy.sampler.InputPollingSample
-import com.learnprogrammingacademy.sampler.MultiplexerSample
+import com.learnprogrammingacademy.sampler.samples.MultiplexerSample
 
 fun main(args: Array<String>) {
     val config = LwjglApplicationConfiguration()

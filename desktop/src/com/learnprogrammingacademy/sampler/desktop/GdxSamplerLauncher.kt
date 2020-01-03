@@ -57,7 +57,7 @@ class GdxSamplerLauncher : JFrame() {
             weighty = 1.0
         }
 
-        sampleList = JList(arrayOf("com.learnprogrammingacademy.sampler.InputPollingSample"))
+        sampleList = JList(arrayOf("com.learnprogrammingacademy.sampler.samples.InputPollingSample"))
         sampleList.fixedCellWidth = cellWidth
         sampleList.selectionMode = ListSelectionModel.SINGLE_SELECTION
 

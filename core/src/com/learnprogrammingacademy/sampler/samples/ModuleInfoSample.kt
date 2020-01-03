@@ -1,14 +1,11 @@
-package com.learnprogrammingacademy.sampler
+package com.learnprogrammingacademy.sampler.samples
 
 import com.badlogic.gdx.Application
-import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Gdx
-import com.badlogic.gdx.graphics.GL20
-import com.badlogic.gdx.graphics.Texture
-import com.badlogic.gdx.graphics.g2d.SpriteBatch
+import com.learnprogrammingacademy.sampler.common.SampleBase
 import com.learnprogrammingacademy.sampler.utils.logger
 
-class ModuleInfoSample : ApplicationAdapter() {
+class ModuleInfoSample : SampleBase() {
 
     companion object {
         @JvmStatic

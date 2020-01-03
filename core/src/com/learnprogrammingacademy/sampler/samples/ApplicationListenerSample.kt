@@ -1,11 +1,11 @@
-package com.learnprogrammingacademy.sampler
+package com.learnprogrammingacademy.sampler.samples
 
 import com.badlogic.gdx.Application
-import com.badlogic.gdx.ApplicationListener
 import com.badlogic.gdx.Gdx
+import com.learnprogrammingacademy.sampler.common.SampleBase
 import com.learnprogrammingacademy.sampler.utils.logger
 
-class ApplicationListenerSample : ApplicationListener {
+class ApplicationListenerSample : SampleBase() {
 
     companion object {
         @JvmStatic

@@ -1,20 +1,19 @@
-package com.learnprogrammingacademy.sampler
+package com.learnprogrammingacademy.sampler.samples
 
 import com.badlogic.gdx.Application
-import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Gdx
-import com.badlogic.gdx.InputProcessor
 import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.Viewport
+import com.learnprogrammingacademy.sampler.common.SampleBase
 import com.learnprogrammingacademy.sampler.utils.GdxArray
 import com.learnprogrammingacademy.sampler.utils.clearScreen
 import com.learnprogrammingacademy.sampler.utils.logger
 import com.learnprogrammingacademy.sampler.utils.toInternalFile
 
-class InputListeningSample : ApplicationAdapter(), InputProcessor {
+class InputListeningSample : SampleBase() {
 
     companion object {
         @JvmStatic
