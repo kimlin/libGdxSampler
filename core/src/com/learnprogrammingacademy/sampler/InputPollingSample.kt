@@ -17,7 +17,7 @@ class InputPollingSample : ApplicationAdapter() {
 
     companion object {
         @JvmStatic
-        private val logger = logger<ApplicationListenerSample>()
+        private val logger = logger<InputPollingSample>()
     }
 
     lateinit var camera: OrthographicCamera

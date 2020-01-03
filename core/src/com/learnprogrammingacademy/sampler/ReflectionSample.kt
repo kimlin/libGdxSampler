@@ -18,7 +18,7 @@ class ReflectionSample : ApplicationAdapter() {
 
     companion object {
         @JvmStatic
-        private val logger = logger<ApplicationListenerSample>()
+        private val logger = logger<ReflectionSample>()
     }
 
     private lateinit var camera: OrthographicCamera
