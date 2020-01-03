@@ -1,8 +1,8 @@
 package com.learnprogrammingacademy.sampler.desktop
 
-import com.badlogic.gdx.ApplicationListener
 import com.badlogic.gdx.backends.lwjgl.LwjglAWTCanvas
-import com.badlogic.gdx.utils.reflect.ClassReflection
+import com.learnprogrammingacademy.sampler.common.SampleFactory
+import com.learnprogrammingacademy.sampler.common.SampleInfos
 import java.awt.BorderLayout
 import java.awt.Dimension
 import java.awt.GridBagConstraints
@@ -57,7 +57,7 @@ class GdxSamplerLauncher : JFrame() {
             weighty = 1.0
         }
 
-        sampleList = JList(arrayOf("com.learnprogrammingacademy.sampler.samples.InputPollingSample"))
+        sampleList = JList(SampleInfos.getSampleNames())
         sampleList.fixedCellWidth = cellWidth
         sampleList.selectionMode = ListSelectionModel.SINGLE_SELECTION
 
@@ -111,16 +111,12 @@ class GdxSamplerLauncher : JFrame() {
             contentPane.remove(lwjglAWTCanvas?.canvas)
         }
 
-        // get class object by name
-        val sampleClass = ClassReflection.forName(name)
-
-        // create new instance of sample class
-        val sample = ClassReflection.newInstance(sampleClass) as ApplicationListener
-
+        val sample = SampleFactory.newSample(name)
         lwjglAWTCanvas = LwjglAWTCanvas(sample)
         lwjglAWTCanvas?.canvas?.size = Dimension(canvasWidth, windowHeight)
         @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
         contentPane.add(lwjglAWTCanvas?.canvas, BorderLayout.CENTER)
+
         pack()
     }
 }
