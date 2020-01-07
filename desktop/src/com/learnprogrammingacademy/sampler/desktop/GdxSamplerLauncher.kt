@@ -28,7 +28,7 @@ class GdxSamplerLauncher : JFrame() {
         title = this::class.java.simpleName
         minimumSize = windowSize
         size = windowSize
-        isResizable = false
+//        isResizable = false
         defaultCloseOperation = WindowConstants.EXIT_ON_CLOSE
 
         createControlPanel()
