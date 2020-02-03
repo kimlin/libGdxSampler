@@ -13,7 +13,8 @@ object SampleInfos {
             SampleInfo(MultiplexerSample::class.java),
             SampleInfo(ReflectionSample::class.java),
             SampleInfo(OrthographicCameraSample::class.java),
-            SampleInfo(ViewportSample::class.java)
+            SampleInfo(ViewportSample::class.java),
+            SampleInfo(SpriteBatchSample::class.java)
     )
 
     // val map : Map<String, Class<out SampleInfo>>
