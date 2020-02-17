@@ -9,10 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.Viewport
 import com.learnprogrammingacademy.sampler.common.SampleBase
-import com.learnprogrammingacademy.sampler.utils.GdxArray
-import com.learnprogrammingacademy.sampler.utils.clearScreen
-import com.learnprogrammingacademy.sampler.utils.logger
-import com.learnprogrammingacademy.sampler.utils.toInternalFile
+import com.learnprogrammingacademy.sampler.utils.*
 
 class SpriteBatchSample : SampleBase() {
 
@@ -51,11 +48,8 @@ class SpriteBatchSample : SampleBase() {
         clearScreen()
 
         batch.projectionMatrix = camera.combined
-        batch.begin()
 
-        draw()
-
-        batch.end()
+        batch.use { draw() }
     }
 
     private fun draw() {
@@ -74,8 +68,8 @@ class SpriteBatchSample : SampleBase() {
                 1f,
                 1f,
                 0f,
-                0,
-                0,
+                texture.width / 2,
+                texture.height / 2,
                 texture.width,
                 texture.height,
                 false,

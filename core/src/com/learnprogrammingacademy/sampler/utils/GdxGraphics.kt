@@ -3,6 +3,7 @@ package com.learnprogrammingacademy.sampler.utils
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.GL20
+import com.badlogic.gdx.graphics.g2d.Batch
 
 // JvmOverloads creates the option of using clearScreen method with default parameter in JAVA
 @JvmOverloads
@@ -13,4 +14,10 @@ fun clearScreen(red: Float, green: Float, blue: Float, alpha: Float) {
     // WET - Waste everyone's time
     Gdx.gl.glClearColor(red, green, blue, alpha)
     Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
+}
+
+inline fun Batch.use(action: () -> Unit) {
+    begin()
+    action()
+    end()
 }
