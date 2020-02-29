@@ -9,10 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.badlogic.gdx.utils.viewport.Viewport
 import com.learnprogrammingacademy.sampler.common.SampleBase
-import com.learnprogrammingacademy.sampler.utils.clearScreen
-import com.learnprogrammingacademy.sampler.utils.isKeyPressed
-import com.learnprogrammingacademy.sampler.utils.logger
-import com.learnprogrammingacademy.sampler.utils.toInternalFile
+import com.learnprogrammingacademy.sampler.utils.*
 
 class OrthographicCameraSample : SampleBase() {
 
@@ -56,11 +53,8 @@ class OrthographicCameraSample : SampleBase() {
         // through projectionMatrix we are telling batch about the camera position, zoom and rotation (combined)
         // according to our camera settings the batch will know how to draw everything on the screen
         batch.projectionMatrix = camera.combined
-        batch.begin()
 
-        draw()
-
-        batch.end()
+        batch.use { draw() }
     }
 
     private fun queryInput() {

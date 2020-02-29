@@ -13,6 +13,7 @@ import com.learnprogrammingacademy.sampler.common.SampleBase
 import com.learnprogrammingacademy.sampler.utils.clearScreen
 import com.learnprogrammingacademy.sampler.utils.logger
 import com.learnprogrammingacademy.sampler.utils.toInternalFile
+import com.learnprogrammingacademy.sampler.utils.use
 
 class ReflectionSample : SampleBase() {
 
@@ -47,11 +48,7 @@ class ReflectionSample : SampleBase() {
         clearScreen()
 
         batch.projectionMatrix = camera.combined
-        batch.begin()
-
-        draw()
-
-        batch.end()
+        batch.use { draw() }
     }
 
     private fun draw() {

@@ -12,6 +12,7 @@ import com.learnprogrammingacademy.sampler.common.SampleBase
 import com.learnprogrammingacademy.sampler.utils.clearScreen
 import com.learnprogrammingacademy.sampler.utils.logger
 import com.learnprogrammingacademy.sampler.utils.toInternalFile
+import com.learnprogrammingacademy.sampler.utils.use
 
 class ViewportSample : SampleBase() {
 
@@ -79,11 +80,7 @@ class ViewportSample : SampleBase() {
 
 
         batch.projectionMatrix = camera.combined
-        batch.begin()
-
-        draw()
-
-        batch.end()
+        batch.use { draw() }
     }
 
     private fun draw() {
